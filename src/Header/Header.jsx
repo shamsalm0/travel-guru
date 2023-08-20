@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../Background/Background.css'
+import { BackgroundContext } from '../Context/BackGroundProvider/BackGroundProvider';
 const Header = () => {
+  const {user,logOut}=useContext(BackgroundContext)
+  console.log(user,'i am user')
     return (
      
         
@@ -16,11 +19,14 @@ const Header = () => {
   </div>
   <div className="flex-none">
   <div className='flex items-center'>
-    <Link className='mr-3 font-extrabold text-xl' to='/news'>News</Link>
+    <Link className='mr-3 font-extrabold text-xl' to='/'>Home</Link>
     <Link className='mr-3 font-extrabold text-xl ' to='/destination'>Destination</Link>
     <Link className='mr-3 font-extrabold text-xl' to='/blog'>Blog</Link>
     <Link className='mr-3 font-extrabold text-xl' to='/contact'>Contact</Link>
-    <Link className='mr-3  font-extrabold text-xl' to='/login'>LogIn</Link>
+   {
+   user?.uid?<><img className='h-8 w-8 rounded-md' src={user.photoURL} alt="" /><button onClick={logOut} className='mr-3  font-extrabold text-xl'>LogOut</button></>:<> <Link className='mr-3  font-extrabold text-xl' to='/signin'>LogIn</Link>
+   <Link className='mr-3  font-extrabold text-xl' to='/signup'>SignUp</Link></>
+   }
   </div>
 </div>
      </div>   

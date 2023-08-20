@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './Booking.css'
 const Booking = () => {
     const place=useLoaderData();
@@ -27,7 +27,7 @@ const Booking = () => {
           <label htmlFor="to" className="block text-sm font-medium text-gray-700">To</label>
           <input type="date" id="to" name="to" className="mt-1 p-2 w-full border rounded-md" />
         </div>
-        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Submit</button>
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"><Link to='/hotel'>Booking</Link></button>
       </form>
     </div>
             </div>
