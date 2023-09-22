@@ -22,9 +22,9 @@ const Glimps = ({ picture, isSelected, onSelect }) => {
   return (
     <div>
       
-      <img
+      <img 
         onClick={() => handleSelect(id)}
-        className='glimps-img'
+        className='glimps-img '
         src={image_url}
         alt=""
         srcSet=""

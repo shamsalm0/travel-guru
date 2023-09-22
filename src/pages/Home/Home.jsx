@@ -6,6 +6,7 @@ import Glimps from '../../Glimps/Glimps';
 import '../../Background/Background.css';
 import { BackgroundContext } from '../../Context/BackGroundProvider/BackGroundProvider';
 import Booking from '../Booking/Booking';
+import './Home.css'
 
 const Home = () => {
   const pictures = useLoaderData();
@@ -23,12 +24,12 @@ const Home = () => {
   }
 
   return (
-    <div style={{ height: '700px' }} className='flex items-center justify-end '>
-      <div  className='text-2xl '><p style={{fontFamily:'bebas niue',fontSize:'76px',color:'white' }}>{name}</p>
-      <Link to={`/booking/${selectedCardId}`}><button  onClick={()=>handleBooking()} className='mt-10' style={{height:'48px',width:'161px',backgroundColor:'orange'}}>Booking</button></Link>
-      </div>
+    <div style={{ height: '700px' }} className='  lg:flex  h-40 flex items-center justify-evenly   lg:items-center lg:justify-end  '>
+      <div  className='lg:text-4xl lg:mr-5 mr-32 text-lg mb-80 ml-10 mt-20 '><p style={{fontFamily:'bebas niue',color:'white' }}>{name}</p>
+      <Link to={`/booking/${selectedCardId}`}><button  onClick={()=>handleBooking()} className='lg:mt-10 lg:h-16 lg:mr-5 text-sm lg:text-5xl' style={{backgroundColor:'orange'}}>Booking</button></Link>
+      </div >
       { pictures.map((picture) => (
-        <Glimps
+        <Glimps className='glimps '
           key={picture.id}
           picture={picture}
           isSelected={selectedCardId === picture.id}

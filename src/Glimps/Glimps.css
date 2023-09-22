@@ -6,3 +6,13 @@
     margin-right: 7px;
     
 }
+
+@media screen and (max-width:400px) {
+    .glimps-img{
+       margin-bottom: 170px;
+       margin-right: 40px;
+        width: 150px;
+        height:170px;
+        
+    }
+}

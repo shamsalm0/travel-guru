@@ -18,12 +18,12 @@ export const router=createBrowserRouter(
                 {
                     path:'/',
                     element:<Home></Home>,
-                    loader:()=>fetch('https://travel-guru-server-shamsalm0.vercel.app/travellingPlaces')
+                    loader:()=>fetch('https://travel-guru-server-h63x.vercel.app/travellingPlaces')
                 },
                 {
                     path:'/booking/:id',
                     element:<Booking></Booking>,
-                    loader:({params})=>fetch(`https://travel-guru-server-silk.vercel.app/travellingPlaces/${params.id}`)
+                    loader:({params})=>fetch(`https://travel-guru-server-h63x.vercel.app/travellingPlaces/${params.id}`)
                 },
                 {
                     path:'/login',
@@ -38,8 +38,10 @@ export const router=createBrowserRouter(
                    element:<SignIn></SignIn> 
                 },
                 {
-                    path:'/hotel',
+                    path:'/hotel/:id',
+                    loader:({params})=>fetch(`https://travel-guru-server-h63x.vercel.app/bookingHotel/${params.id}`),
                     element:<PrivateRoute><Hotel></Hotel></PrivateRoute>
+                    
                 }
             ]
         }
